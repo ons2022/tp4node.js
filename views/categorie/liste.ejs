@@ -1,0 +1,27 @@
+<% if (categories.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (const category of categories) { %>
+          <tr>
+            <td><%= category.name %></td>
+            <td><%= category.description %></td>
+            <td>
+              <a href="/categories/edit/<%= category._id %>">Modifier</a>
+              <a href="/categories/delete/<%= category._id %>">Supprimer</a>
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <a href="/categories/create">Ajouter une catégorie</a>
+  <% } else { %>
+    <p>Aucune catégorie trouvée.</p>
+    <a href="/categories/create">Ajouter une catégorie</a>
+  <% } %>

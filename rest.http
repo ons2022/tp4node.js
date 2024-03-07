@@ -1,0 +1,7 @@
+###
+
+POST http://localhost:4000/categories
+Content-Type: application/json
+{
+    "name" : "phone"
+}
